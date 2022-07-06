@@ -2,7 +2,6 @@ package calculator;
 import java.util.Scanner;
 
 public class Main {
-    static char slash = '/';
 
     public static int getInt() {
         int num;
@@ -27,8 +26,6 @@ public class Main {
         }
         return op;
     }
-    public class string {
-    }
     public static String calc(int num1, char operator, int num2) {
         boolean trust = true;
         int sum = 0;
@@ -51,8 +48,8 @@ public class Main {
                 }
                 break;
         }
-        if (trust == false) {
-            System.out.printf("Деление на 0\n");
+        if (!trust) {
+            System.out.print("Деление на 0\n");
             return error;
         }
         System.out.println(sum);
