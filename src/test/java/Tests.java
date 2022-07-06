@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import ru.ac.uniyar.esin.and.scherbakov.Main;
+import calculator.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

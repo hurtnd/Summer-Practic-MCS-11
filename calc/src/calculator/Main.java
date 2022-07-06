@@ -1,4 +1,4 @@
-package ru.ac.uniyar.esin.and.scherbakov;
+package calculator;
 import java.util.Scanner;
 
 public class Main {
