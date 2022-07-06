@@ -41,13 +41,13 @@ public class Main
         switch (operator)
         {
             case '+':
-                sum = Integer.parseInt(String.valueOf(num1 + num2));
+                sum = (num1 + num2);
                 break;
             case '-':
-                sum = Integer.parseInt(String.valueOf(num1)) - Integer.parseInt(String.valueOf(num2));
+                sum = (num1 - num2);
                 break;
             case '*':
-                sum = Integer.parseInt(String.valueOf(num1)) * Integer.parseInt(String.valueOf(num2));
+                sum = (num1 * num2);
                 break;
             case '/':
                 if (num2 == 0)
@@ -56,7 +56,7 @@ public class Main
                 }
                 else
                 {
-                    sum = Integer.parseInt(String.valueOf(num1)) / Integer.parseInt(String.valueOf(num2));
+                    sum = (num1 / num2);
                 }
                 break;
         }
