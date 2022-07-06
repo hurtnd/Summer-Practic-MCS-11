@@ -3,7 +3,7 @@ import ru.ac.uniyar.esin.and.scherbakov.Main;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CalculatorTest {
+public class Tests {
     @Test
     void one() {
         String actual = String.valueOf(Main.calc(1, '+',1));
