@@ -27,10 +27,12 @@ public class Main {
         }
         return op;
     }
-
-    public static int calc(int num1, char operator, int num2) {
+    public class string {
+    }
+    public static String calc(int num1, char operator, int num2) {
         boolean trust = true;
         int sum = 0;
+        String error = "Деление на 0";
         switch (operator) {
             case '+':
                 sum = (num1 + num2);
@@ -50,11 +52,11 @@ public class Main {
                 break;
         }
         if (trust == false) {
-            System.out.printf("Error\n");
-            return 0;
+            System.out.printf("Деление на 0\n");
+            return error;
         }
         System.out.println(sum);
-        return sum;
+        return String.valueOf(sum);
     }
 
     static Scanner scanner = new Scanner(System.in);

@@ -61,6 +61,6 @@ public class Tests {
     @Test
     void ten() {
         String actual = String.valueOf(Main.calc(7, '/',0));
-        assertEquals("0", actual);
+        assertEquals("Деление на 0", actual);
     }
 }
