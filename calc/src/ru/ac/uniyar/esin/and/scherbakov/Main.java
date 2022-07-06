@@ -34,32 +34,38 @@ public class Main
         }
         return op;
     }
-    public static int calc(int num1, int num2, char operator)
+    public static int calc(int num1, char operator, int num2)
     {
+        boolean trust = true;
         int sum = 0;
         switch (operator)
         {
             case '+':
-                sum = num1 + num2;
+                sum = Integer.parseInt(String.valueOf(num1 + num2));
                 break;
             case '-':
-                sum = num1 - num2;
+                sum = Integer.parseInt(String.valueOf(num1)) - Integer.parseInt(String.valueOf(num2));
                 break;
             case '*':
-                sum = num1 * num2;
+                sum = Integer.parseInt(String.valueOf(num1)) * Integer.parseInt(String.valueOf(num2));
                 break;
             case '/':
                 if (num2 == 0)
                 {
-                    System.out.print("Error");
-                    System.exit(0);
+                    trust = false;
                 }
                 else
                 {
-                    sum = num1 / num2;
+                    sum = Integer.parseInt(String.valueOf(num1)) / Integer.parseInt(String.valueOf(num2));
                 }
                 break;
         }
+        if (trust == false)
+        {
+            System.out.printf("Error\n");
+            return 0;
+        }
+        System.out.println(sum);
         return sum;
     }
     static Scanner scanner = new Scanner(System.in);
@@ -68,6 +74,10 @@ public class Main
         int num1 = getInt();
         char operator = getSign();
         int num2 = getInt();
-        System.out.print(calc(num1, num2, operator));
+        System.out.print(calc(num1, operator, num2));
     }
+
+//    public static String calculate(String s, String s1, String s2) {
+//
+//    }
 }
