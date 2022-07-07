@@ -1,4 +1,6 @@
 package calculator;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -62,6 +64,11 @@ public class Main {
         int num1 = getInt();
         char operator = getSign();
         int num2 = getInt();
-        System.out.print(calc(num1, operator, num2));
+        //System.out.print(calc(num1, operator, num2));
+        List<String> numbers = new ArrayList<>();
+        numbers.add(String.valueOf(num1));
+        numbers.add(String.valueOf(operator));
+        numbers.add(String.valueOf(num2));
+        System.out.println(numbers);
     }
 }

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Summer-Practic-MCS-11" target="1.8" />
+      <module name="Summer-Practic-MCS-11" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
