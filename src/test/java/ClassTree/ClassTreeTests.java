@@ -66,11 +66,9 @@ public class ClassTreeTests {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         ClassTree parent = new ClassTree("Parent");
-        root.add(child);
         root.add(parent);
-        assertEquals(2, root.getChild().size());
-        assertEquals("Leaf", root.getChild().get(0).getName());
-        assertEquals("Parent", root.getChild().get(1).getName());
-        root.rename("Parent", "Friend");
+        assertEquals(1, root.getChild().size());
+        assertEquals("Parent", root.getChild().get(0).getName());
+        child.rename("Parent", "Friend");
     }
 }
