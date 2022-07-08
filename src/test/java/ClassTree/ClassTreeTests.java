@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ClassTreeTests {
 
     @Test
-    void createNode(){
+    void createNode() {
         ClassTree node = new ClassTree("Root");
         assertEquals("Root", node.getName());
     }
 
     @Test
-    void addNode(){
+    void addNode() {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         root.add(child);
@@ -22,8 +22,19 @@ public class ClassTreeTests {
     }
 
     @Test
-    void deleteNode()
-    {
+    void addTwoNodes() {
+        ClassTree root = new ClassTree("Root");
+        ClassTree child = new ClassTree("Leaf");
+        ClassTree parent = new ClassTree("Parent");
+        root.add(child);
+        root.add(parent);
+        assertEquals(2, root.getChild().size());
+        assertEquals("Leaf", root.getChild().get(0).getName());
+        assertEquals("Parent", root.getChild().get(1).getName());
+    }
+
+    @Test
+    void deleteNode() {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         root.add(child);
@@ -33,8 +44,7 @@ public class ClassTreeTests {
     }
 
     @Test
-    void deleteChild()
-    {
+    void deleteChild() {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         ClassTree parent = new ClassTree("Parent");
@@ -47,8 +57,7 @@ public class ClassTreeTests {
     }
 
     @Test
-    void search()
-    {
+    void search() {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         ClassTree parent = new ClassTree("Parent");
@@ -61,8 +70,7 @@ public class ClassTreeTests {
     }
 
     @Test
-    void rename()
-    {
+    void rename() {
         ClassTree root = new ClassTree("Root");
         ClassTree child = new ClassTree("Leaf");
         ClassTree parent = new ClassTree("Parent");
