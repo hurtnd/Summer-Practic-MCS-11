@@ -63,6 +63,6 @@ public class CalculatorTests {
     @Test
     void ten() {
         String actual = Calculator.calc(7, '/', 0);
-        assertEquals("Деление на 0", actual);
+        assertEquals("Division by 0", actual);
     }
 }

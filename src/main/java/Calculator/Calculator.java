@@ -31,7 +31,7 @@ public class Calculator {
     public static String calc(int num1, char operator, int num2) {
         boolean trust = true;
         int sum = 0;
-        String error = "Деление на 0";
+        String error = "Division by 0";
         switch (operator) {
             case '+':
                 sum = (num1 + num2);
@@ -51,7 +51,7 @@ public class Calculator {
                 break;
         }
         if (!trust) {
-            System.out.print("Деление на 0\n");
+            System.out.print("Division by 0\n");
             return error;
         }
         System.out.println(sum);
