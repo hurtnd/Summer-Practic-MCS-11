@@ -12,5 +12,4 @@
 | Unit tests for a class tree | + |
 | Entering data into the tree from a file | - |
 
- Copyright © 2022 Hurtnd. All rights reserved.
 </div>
