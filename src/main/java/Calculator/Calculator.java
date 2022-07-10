@@ -64,13 +64,6 @@ public class Calculator {
         int num1 = getInt();
         char operator = getSign();
         int num2 = getInt();
-        //
-        //System.out.print(calc(num1, operator, num2));
-        List<String> numbers1 = new ArrayList<>();
-        List<String> numbers2 = new ArrayList<>();
-        numbers1.add(String.valueOf(num1));
-        numbers2.add(String.valueOf(num2));
-        System.out.print(numbers1);
-        System.out.println(numbers2);
+        System.out.print(calc(num1, operator, num2));
     }
 }
