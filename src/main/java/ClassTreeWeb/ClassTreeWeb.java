@@ -85,12 +85,22 @@ public class ClassTreeWeb {
         }
     }
 
-    public String printToHtml(ClassTreeWeb root) {
-        String result = "<ul>";
-        // result += root.printTree();
+    public String printstr4(/*ClassTreeWeb root*/) {
+        String result = "";
+        result += "<li>";
+        result += name;
+        result += "</li>";
         for(int i = 0; i < child.size(); i++) {
-            result += child.get(i).name + "<br>";
+            result += "<li>";
+            result += child.get(i).printToHtml();
+            result += "</li>";
         }
+        result += "</li>";
+        return result;
+    }
+    public String printToHtml() {
+        String result = "     <ul>";
+        result += printstr4();
         result += "</ul>";
         return result;
     }

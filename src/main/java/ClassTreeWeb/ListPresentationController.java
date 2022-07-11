@@ -156,7 +156,7 @@ public class ListPresentationController {
                 "  </head>" +
                 "  <body>" +
                 "    <h1>Tree output</h1>" +
-                root.printToHtml(root) +
+                root.printToHtml() +
                 "  </body>" +
                 "</html>";
     }

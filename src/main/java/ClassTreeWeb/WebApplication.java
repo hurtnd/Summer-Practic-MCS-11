@@ -18,7 +18,6 @@ public class WebApplication extends Application {
         root = new ClassTreeWeb("Root");
         root.add(new ClassTreeWeb("Leaf 1"));
         root.add(new ClassTreeWeb("Leaf 2"));
-        list.add("aaa");
     }
 
     /**
