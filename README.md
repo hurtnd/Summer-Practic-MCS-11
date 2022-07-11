@@ -11,5 +11,7 @@
 | Class tree | + |
 | Unit tests for a class tree | + |
 | Entering data into the tree from a file | - |
+| Tree output in the browser | + |
+| Operations of adding, deleting and changing in the browser version of the tree | - |
 
 </div>
