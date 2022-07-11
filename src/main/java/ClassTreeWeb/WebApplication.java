@@ -22,6 +22,7 @@ public class WebApplication extends Application {
 
     /**
      * Возвращает список всех ресурсов web-приложения.
+     * 
      * @return список всех ресурсов web-приложения.
      */
     @Override

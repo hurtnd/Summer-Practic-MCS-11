@@ -18,8 +18,10 @@ import java.util.List;
 public class ListPresentationController {
     private final List<String> list;
     private final ClassTreeWeb root;
+
     /**
      * Запоминает список, с которым будет работать.
+     * 
      * @param list список, с которым будет работать контроллер.
      */
     public ListPresentationController(List<String> list, ClassTreeWeb root) {
@@ -28,19 +30,20 @@ public class ListPresentationController {
     }
 
     /**
-     * Выводит HTML-страницу со списком, ссылками на страницы редактирования и копкой добавления записи.
+     * Выводит HTML-страницу со списком, ссылками на страницы редактирования и
+     * копкой добавления записи.
+     * 
      * @return HTML-страница со списком.
      */
     @GET
-    @Path("/")
+    @Path("rest")
     @Produces("text/html")
     public String getList() {
-        String result =
-                "<html>" +
+        String result = "<html>" +
                 "  <head>" +
                 "    <title>" +
-                        "Tree WEB" +
-                        "</title>" +
+                "Tree WEB" +
+                "</title>" +
                 "  </head>" +
                 "  <body>" +
                 "    <h1><center>Tree</center></h1>" +
@@ -61,7 +64,9 @@ public class ListPresentationController {
 
     /**
      * Пример обработки POST запроса.
-     * Добавляет одну случайную запись в список и перенаправляет пользователя на основную страницу со списком.
+     * Добавляет одну случайную запись в список и перенаправляет пользователя на
+     * основную страницу со списком.
+     * 
      * @return перенаправление на основную страницу со списком.
      */
     @POST
@@ -78,6 +83,7 @@ public class ListPresentationController {
 
     /**
      * Выводит страничку для редактирования одного элемента.
+     * 
      * @param itemId индекс элемента списка.
      * @return страничка для редактирования одного элемента.
      */
@@ -86,19 +92,17 @@ public class ListPresentationController {
     @Produces("text/html")
     public String getEditPage(@PathParam("id") int itemId) {
         String listItem = list.get(itemId);
-        String result =
-                "<html>" +
-                        "  <head>" +
-                        "    <title>Редактирование элемента списка</title>" +
-                        "  </head>" +
-                        "  <body>" +
-                        "    <h1>Редактирование элемента списка</h1>" +
-                        "    <form method=\"post\" action=\"/edit/" + itemId + "\">" +
-                        "      <p>Значение</p>" +
-                        "      <input type=\"text\" name=\"value\" value=\"" + listItem +"\"/>" +
-                        "      <input type=\"submit\"/>";
-        result +=
-                "            </form>" +
+        String result = "<html>" +
+                "  <head>" +
+                "    <title>Редактирование элемента списка</title>" +
+                "  </head>" +
+                "  <body>" +
+                "    <h1>Редактирование элемента списка</h1>" +
+                "    <form method=\"post\" action=\"/edit/" + itemId + "\">" +
+                "      <p>Значение</p>" +
+                "      <input type=\"text\" name=\"value\" value=\"" + listItem + "\"/>" +
+                "      <input type=\"submit\"/>";
+        result += "            </form>" +
                 "  </body>" +
                 "</html>";
         return result;
@@ -106,6 +110,7 @@ public class ListPresentationController {
 
     /**
      * Редактирует элемент списка на основе полученных данных.
+     * 
      * @param itemId индекс элемента списка.
      * @return перенаправление на основную страницу со списком.
      */
@@ -146,16 +151,17 @@ public class ListPresentationController {
                 "  </body>" +
                 "</html>";
     }
+
     @GET
-    @Path("tree")
+    @Path("/")
     @Produces("text/html")
     public String getTree() {
         return "<html>" +
                 "  <head>" +
-                "    <title>Hello world</title>" +
+                "    <title>Tree</title>" +
                 "  </head>" +
                 "  <body>" +
-                "    <h1>Tree output</h1>" +
+                "    <h1><center>Tree output</center></h1>" +
                 root.printToHtml() +
                 "  </body>" +
                 "</html>";

@@ -27,27 +27,6 @@ public class ClassTreeWeb {
         this.child.add(child);
     }
 
-    public String printTree() {
-        return printTree("", 0);
-    }
-
-    private String printTree(String s, int t) {
-        for (int i = 0; i < t; i++) {
-            s += " ";
-        }
-        s += name;
-        s += "\n";
-        if (child.size() == 0) {
-            return s;
-        }
-        else {
-            for (int i = 0; i < child.size(); i++) {
-                s += child.get(i).printTree("", t + 1);
-            }
-            return s;
-        }
-    }
-
     public void delete(String name) {
         for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
@@ -57,9 +36,9 @@ public class ClassTreeWeb {
     }
 
     public void deleteOC(String name) {
-        for(int i = 0; i < child.size(); i++) {
+        for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
-                for(int j = i + 1; i < child.size(); j++) {
+                for (int j = i + 1; i < child.size(); j++) {
                     child.remove(j);
                 }
             }
@@ -67,44 +46,36 @@ public class ClassTreeWeb {
     }
 
     public boolean search(String name) {
-        for(int i = 0; i < child.size(); i++) {
+        for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
                 return true;
-            }
-            else
+            } else
                 return false;
         }
         return false;
     }
 
     public void rename(String name, String rename) {
-        for(int i = 0; i < child.size(); i++) {
+        for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
-                child.set(i,child.get(i));
+                child.set(i, child.get(i));
             }
         }
     }
 
-    public String printstr4(/*ClassTreeWeb root*/) {
+    public String printTree() {
         String result = "";
-        result += "<li>";
         result += name;
-        result += "</li>";
-        for(int i = 0; i < child.size(); i++) {
-            result += "<li>";
+        for (int i = 0; i < child.size(); i++) {
             result += child.get(i).printToHtml();
-            result += "</li>";
         }
-        result += "</li>";
         return result;
     }
+
     public String printToHtml() {
-        String result = "     <ul>";
-        result += printstr4();
+        String result = "   <ul>";
+        result += printTree();
         result += "</ul>";
         return result;
     }
 }
-
-
-
