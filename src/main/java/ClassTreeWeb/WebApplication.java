@@ -16,8 +16,16 @@ public class WebApplication extends Application {
 
     public WebApplication() {
         root = new ClassTreeWeb("Root");
-        root.add(new ClassTreeWeb("Leaf 1"));
-        root.add(new ClassTreeWeb("Leaf 2"));
+        ClassTreeWeb child = new ClassTreeWeb("Barrel 1");
+        root.add(child);
+        ClassTreeWeb chile = new ClassTreeWeb("Barrel 2");
+        root.add(chile);
+        ClassTreeWeb kide = new ClassTreeWeb("Leaf 3");
+        chile.add(kide);
+        ClassTreeWeb kid = new ClassTreeWeb("Leaf 1");
+        child.add(kid);
+        ClassTreeWeb kidd = new ClassTreeWeb("Leaf 2");
+        child.add(kidd);
     }
 
     /**

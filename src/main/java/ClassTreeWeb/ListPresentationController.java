@@ -155,14 +155,20 @@ public class ListPresentationController {
     @GET
     @Path("/")
     @Produces("text/html")
-    public String getTree() {
+    public String treeMain() {
         return "<html>" +
                 "  <head>" +
                 "    <title>Tree</title>" +
                 "  </head>" +
                 "  <body>" +
                 "    <h1><center>Tree output</center></h1>" +
-                root.printToHtml() +
+                root.printToHtmlOutput() +
+                "    <h1><center>Tree delete</center></h1>" +
+                root.printToHtmlDelete() +
+                "    <h1><center>Joe Biden</center></h1>" +
+                "<p>" +
+                "  <center><iframe src=https://c.tenor.com/ZRwu-c5GDJAAAAAC/biden-thin-air-handshake.gif width=498 height=331 frameBorder=\"0\" allowFullScreen></iframe></center>" +
+                "</p>" +
                 "  </body>" +
                 "</html>";
     }

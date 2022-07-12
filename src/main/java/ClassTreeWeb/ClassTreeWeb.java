@@ -35,6 +35,28 @@ public class ClassTreeWeb {
         }
     }
 
+    public String delete_temp(String name) {
+        Boolean temp = false;
+        String text = "";
+        for (int i = 0; i < child.size(); i++) {
+            if (child.get(i).getName().equals(name)) {
+                child.remove(i);
+                temp = true;
+            }
+            if (temp)
+            {
+                text = "Completed";
+                break;
+            }
+            else
+            {
+                text = "Do not exist";
+                break;
+            }
+        }
+        return text;
+    }
+
     public void deleteOC(String name) {
         for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
@@ -54,7 +76,16 @@ public class ClassTreeWeb {
         }
         return false;
     }
-
+    public String rename_temp(String name, String rename) {
+        String temp = "";
+        for (int i = 0; i < child.size(); i++) {
+            if (child.get(i).getName().equals(name)) {
+                child.set(i, child.get(i));
+                temp = child.get(i).toString();
+            }
+        }
+        return temp;
+    }
     public void rename(String name, String rename) {
         for (int i = 0; i < child.size(); i++) {
             if (child.get(i).getName().equals(name)) {
@@ -67,15 +98,27 @@ public class ClassTreeWeb {
         String result = "";
         result += name;
         for (int i = 0; i < child.size(); i++) {
-            result += child.get(i).printToHtml();
+            result += child.get(i).printToHtmlOutput();
         }
         return result;
     }
 
-    public String printToHtml() {
-        String result = "   <ul>";
+    public String printToHtmlOutput() {
+        String result = "<ul>";
         result += printTree();
         result += "</ul>";
+        return result;
+    }
+
+    public String printTreeDelete() {
+        String result = "";
+        result = delete_temp("Leaf 1");
+        return result;
+    }
+
+    public String printToHtmlDelete() {
+        String result = "   <ul>";
+        result = printTreeDelete();
         return result;
     }
 }
